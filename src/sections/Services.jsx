@@ -34,7 +34,10 @@ export default function Services() {
   };
 
   return (
-    <section id="services" className="services-section bg-dark text-light py-5">
+    <section
+      id="services-inner"
+      className="services-section bg-dark text-light py-5"
+    >
       <div className="container">
         <h2 className="text-center fw-bold mb-5 display-5 text-gradient-orange">
           Our Core Services

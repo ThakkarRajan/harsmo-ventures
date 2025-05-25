@@ -60,3 +60,10 @@ body {
 .btn-primary:hover {
   background-color: #ea580c;
 }
+body {
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;
+  overflow-x: clip !important;
+}

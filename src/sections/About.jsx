@@ -1,12 +1,16 @@
-import React from "react";
-import aboutImage from "../assets/about.jpg";
+import React, { useState } from "react";
+import aboutImage from "../assets/hero.jpeg";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "../styles/Animation.css";
 
 export default function About() {
+  const [showMore, setShowMore] = useState(false);
+
   return (
     <section
       id="about"
-      className="min-vh-100 d-flex align-items-center bg-light text-dark"
+      className="min-vh-100 d-flex align-items-center text-dark"
+      style={{ backgroundColor: "#dae0eb" }}
     >
       <div className="container">
         <div className="row align-items-center g-5">
@@ -25,9 +29,32 @@ export default function About() {
               With over 5 years of experience, Harsmo Ventures empowers
               businesses to scale across borders with smart, reliable logistics.
             </p>
-            <a href="#contact" className="btn btn-warning btn-lg fw-semibold">
-              Read More
-            </a>
+
+            {!showMore && (
+              <button
+                className="btn btn-warning btn-lg fw-semibold"
+                onClick={() => setShowMore(true)}
+              >
+                Read More
+              </button>
+            )}
+
+            {showMore && (
+              <div className="mt-4 fade-in-up">
+                <p className="text-secondary">
+                  From warehousing and distribution to freight forwarding...
+                </p>
+                <p className="text-secondary">
+                  🌐 Serving clients globally
+                  <br />
+                  🚛 Real-time tracking
+                  <br />
+                  🤝 Dedicated account managers
+                  <br />
+                  🛠️ Scalable solutions for growing needs
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>
