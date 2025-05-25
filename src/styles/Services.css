@@ -1,0 +1,33 @@
+.service-card {
+  background: #f4f2f2;
+  color: #111827;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+  border: none;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-img {
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 4px solid #f97316;
+}
+
+.card-title {
+  color: #111827;
+}
+
+.card-text {
+  color: #4b5563;
+}
+
+.text-gradient-orange {
+  background: linear-gradient(to right, #f97316, #fdba74);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

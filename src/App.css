@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: #f8fafc;
+  background: linear-gradient(to bottom, #0f172a, #1e293b);
+  background-attachment: fixed;
+  background-size: cover;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+.section-dark {
+  background: linear-gradient(to bottom, #1e293b, #111827);
+}
+
+.btn-primary {
+  background-color: #f97316;
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #ea580c;
+}
