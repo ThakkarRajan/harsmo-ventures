@@ -10,7 +10,8 @@ export default function Navbar() {
     e.preventDefault();
     const section = document.querySelector(target);
     if (section) {
-      const offset = 80; // height of your fixed navbar
+      const offset = document.querySelector(".navbar")?.offsetHeight || 80;
+
       smoothScrollTo(section.offsetTop - offset, 800);
     }
 
