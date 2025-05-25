@@ -1,11 +1,60 @@
-import React from "react";
+import React, { useRef } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "../styles/Navbar.css";
 
 export default function Navbar() {
+  const collapseRef = useRef();
+
+  const handleLinkClick = (target) => (e) => {
+    e.preventDefault();
+    const section = document.querySelector(target);
+    if (section) {
+      smoothScrollTo(section.offsetTop, 800); // slower scroll
+    }
+
+    setTimeout(() => {
+      if (collapseRef.current?.classList.contains("show")) {
+        collapseRef.current.classList.remove("show");
+      }
+    }, 400);
+  };
+
+  const smoothScrollTo = (targetY, duration = 600) => {
+    const startY = window.pageYOffset;
+    const distance = targetY - startY;
+
+    // If scroll distance is very small, just scroll instantly
+    if (Math.abs(distance) < 50) {
+      window.scrollTo(0, targetY);
+      return;
+    }
+
+    const startTime = performance.now();
+
+    const animateScroll = (currentTime) => {
+      const timeElapsed = currentTime - startTime;
+      const progress = Math.min(timeElapsed / duration, 1);
+      const ease = easeOutQuad(progress);
+      window.scrollTo(0, startY + distance * ease);
+
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animateScroll);
+      }
+    };
+
+    requestAnimationFrame(animateScroll);
+  };
+
+  const easeOutQuad = (t) => t * (2 - t);
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+    <nav
+      className="navbar navbar-expand-lg navbar-light fixed-top shadow-sm py-3"
+      style={{ backgroundColor: "#dae0eb" }}
+    >
       <div className="container">
-        <a className="navbar-brand fw-bold" href="#home">
+        <a className="navbar-brand fw-bold text-black" href="#home">
           Harsmo Ventures
         </a>
         <button
@@ -19,36 +68,26 @@ export default function Navbar() {
         >
           <span className="navbar-toggler-icon" />
         </button>
+
         <div
           className="collapse navbar-collapse justify-content-end"
           id="navbarNav"
+          ref={collapseRef}
         >
           <ul className="navbar-nav">
-            <li className="nav-item">
-              <a className="nav-link" href="#home">
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#services">
-                Services
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#about">
-                About
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#testimonials">
-                Testimonials
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#contact">
-                Contact
-              </a>
-            </li>
+            {["Home", "Services", "About", "Testimonials", "Contact"].map(
+              (item, index) => (
+                <li className="nav-item mx-2" key={index}>
+                  <a
+                    className="nav-link fw-medium text-white"
+                    href={`#${item.toLowerCase()}`}
+                    onClick={handleLinkClick(`#${item.toLowerCase()}`)}
+                  >
+                    {item}
+                  </a>
+                </li>
+              )
+            )}
           </ul>
         </div>
       </div>

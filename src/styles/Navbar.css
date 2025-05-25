@@ -1,0 +1,18 @@
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  color: #111827 !important;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #f97316 !important;
+}
+
+.text-gradient-orange {
+  background: linear-gradient(to right, #f97316, #fdba74);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

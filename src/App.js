@@ -6,6 +6,7 @@ import About from "./sections/About";
 import Services from "./sections/Services";
 import Testimonials from "./sections/Testimonials";
 import Contact from "./sections/Contact";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 export default function App() {
   return (
