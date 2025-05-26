@@ -9,16 +9,12 @@ export default function Navbar() {
   const handleLinkClick = (target) => (e) => {
     e.preventDefault();
 
-    const performScroll = () => {
+    const scrollToSection = () => {
       const section = document.querySelector(target);
       if (section) {
         const offset = document.querySelector(".navbar")?.offsetHeight || 80;
         const top = section.offsetTop - offset;
-
-        window.scrollTo({
-          top,
-          behavior: "auto",
-        });
+        window.scrollTo({ top }); // Native scroll-behavior from CSS will apply
       }
     };
 
@@ -27,9 +23,9 @@ export default function Navbar() {
 
     if (isMobile && navbarCollapse?.classList.contains("show")) {
       navbarCollapse.classList.remove("show");
-      setTimeout(() => performScroll(), 400); // Delay to wait for collapse animation
+      setTimeout(() => scrollToSection(), 350); // delay until menu collapses
     } else {
-      performScroll();
+      scrollToSection();
     }
   };
 

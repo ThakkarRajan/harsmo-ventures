@@ -5,26 +5,30 @@ import "../styles/Home.css";
 
 export default function Hero() {
   const collapseRef = useRef();
-  
+
   const handleLinkClick = (target) => (e) => {
     e.preventDefault();
-    const section = document.querySelector(target);
-    if (section) {
-      const offset = document.querySelector(".navbar")?.offsetHeight || 80;
-      const top = section.offsetTop - offset;
 
-      window.scrollTo({
-        top,
-        behavior: "auto", // No smooth scroll, just jump
-      });
-    }
-
-    setTimeout(() => {
-      if (collapseRef.current?.classList.contains("show")) {
-        collapseRef.current.classList.remove("show");
+    const scrollToSection = () => {
+      const section = document.querySelector(target);
+      if (section) {
+        const offset = document.querySelector(".navbar")?.offsetHeight || 80;
+        const top = section.offsetTop - offset;
+        window.scrollTo({ top }); // Native scroll-behavior from CSS will apply
       }
-    }, 400);
+    };
+
+    const isMobile = window.innerWidth < 992;
+    const navbarCollapse = collapseRef.current;
+
+    if (isMobile && navbarCollapse?.classList.contains("show")) {
+      navbarCollapse.classList.remove("show");
+      setTimeout(() => scrollToSection(), 350); // delay until menu collapses
+    } else {
+      scrollToSection();
+    }
   };
+
   return (
     <section
       id="home"
