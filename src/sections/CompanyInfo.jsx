@@ -87,7 +87,7 @@ export default function CompanyInfo() {
               {
                 title: "Strong Global Partnerships",
                 desc: "We build trusted relationships across borders.",
-                icon: "bi-handshake",
+                icon: "bi-hand-thumbs-up",
               },
               {
                 title: "Customer-Centric Service",
