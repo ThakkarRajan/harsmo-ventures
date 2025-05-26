@@ -1,45 +1,45 @@
 .about-section {
   min-height: 100vh;
+  background: linear-gradient(to bottom, #f9fafb, #e2e8f0);
   display: flex;
   align-items: center;
-  background: #f9fafb;
-  padding: 3rem 1rem;
-}
-
-.about-section .container {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  padding: 4rem 1rem;
 }
 
 .about-image {
-  max-width: 100%;
-  border-radius: 12px;
+  border-radius: 15px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
 }
 
 .about-text {
-  max-width: 500px;
-}
-
-.about-text h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  max-width: 600px;
+  margin-top: 1rem;
 }
 
 .about-text p {
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
 }
 
 @media (max-width: 768px) {
   .about-section {
-    flex-direction: column;
     text-align: center;
+    padding: 3rem 1rem;
   }
 
-  .about-text h2 {
-    font-size: 1.5rem;
+  .about-text {
+    margin-top: 2rem;
+  }
+
+  .about-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
   }
 }

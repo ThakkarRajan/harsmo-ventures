@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "../styles/Navbar.css";
-
+import harshmoventure from "../assets/logo.png";
 export default function Navbar() {
   const collapseRef = useRef();
 
@@ -11,8 +11,12 @@ export default function Navbar() {
     const section = document.querySelector(target);
     if (section) {
       const offset = document.querySelector(".navbar")?.offsetHeight || 80;
+      const top = section.offsetTop - offset;
 
-      smoothScrollTo(section.offsetTop - offset, 800);
+      window.scrollTo({
+        top,
+        behavior: "auto", // No smooth scroll, just jump
+      });
     }
 
     setTimeout(() => {
@@ -22,41 +26,22 @@ export default function Navbar() {
     }, 400);
   };
 
-  const smoothScrollTo = (targetY, duration = 600) => {
-    const startY = window.pageYOffset;
-    const distance = targetY - startY;
-
-    // If scroll distance is very small, just scroll instantly
-    if (Math.abs(distance) < 50) {
-      window.scrollTo(0, targetY);
-      return;
-    }
-
-    const startTime = performance.now();
-
-    const animateScroll = (currentTime) => {
-      const timeElapsed = currentTime - startTime;
-      const progress = Math.min(timeElapsed / duration, 1);
-      const ease = easeOutQuad(progress);
-      window.scrollTo(0, startY + distance * ease);
-
-      if (timeElapsed < duration) {
-        requestAnimationFrame(animateScroll);
-      }
-    };
-
-    requestAnimationFrame(animateScroll);
-  };
-
-  const easeOutQuad = (t) => t * (2 - t);
-
   return (
     <nav
       className="navbar navbar-expand-lg navbar-light fixed-top shadow-sm py-3"
       style={{ backgroundColor: "#dae0eb" }}
     >
       <div className="container">
-        <a className="navbar-brand fw-bold text-black" href="#home">
+        <a
+          className="navbar-brand fw-bold text-black d-flex align-items-center"
+          href="#home"
+        >
+          <img
+            src={harshmoventure}
+            alt="Harsmo Ventures Logo"
+            height="55"
+            className="d-inline-block me-3"
+          />
           Harsmo Ventures
         </a>
         <button

@@ -34,7 +34,6 @@ export default function Contact() {
     <section
       id="contact"
       className="min-vh-100 bg-gradient position-relative d-flex flex-column justify-content-center"
-      style={{ backgroundColor: "#dae0eb" }}
     >
       <div className="container py-5">
         <h2 className="text-center fw-bold mb-4 display-5 text-gradient-orange">

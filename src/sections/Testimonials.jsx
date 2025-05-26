@@ -10,38 +10,27 @@ import "../styles/Testimonials.css";
 export default function Testimonials() {
   const testimonials = [
     {
-      quote: "Absolutely seamless logistics experience!",
-      name: "Ravi Patel",
-      company: "OceanTrade Inc.",
-      image: "https://randomuser.me/api/portraits/men/32.jpg",
+      quote:
+        "Great experience with HarsMo Ventures! Quality products, timely delivery, and excellent support. A trusted partner for all our hardware and raw material needs.",
+      name: "YATIN D.",
+      company: "@Anthem",
+      image: "https://randomuser.me/api/portraits/men/66.jpg", // Optional: You can change the image
       rating: 5,
     },
     {
-      quote: "They made global shipping simple and stress-free.",
-      name: "Fatima Khan",
-      company: "Global Mart",
-      image: "https://randomuser.me/api/portraits/women/44.jpg",
-      rating: 4,
-    },
-    {
-      quote: "Handled customs perfectly. Will work with them again.",
-      name: "Leon Wu",
-      company: "Pacific Bridge Logistics",
-      image: "https://randomuser.me/api/portraits/men/61.jpg",
+      quote:
+        "HarsMo Ventures provides excellent products and reliable service. Their educational toys are high quality, and the team is very responsive. Highly recommended!",
+      name: "TARUN P.",
+      company: "@Calidus",
+      image: "https://randomuser.me/api/portraits/men/72.jpg", // Optional: You can change the image
       rating: 5,
     },
     {
-      quote: "કસ્ટમર સર્વિસ અને ટ્રાન્સપોર્ટ એકદમ મજબૂત છે!",
-      name: "Mayur Thakkar",
-      company: "Surat Freight Pvt Ltd",
-      image: "https://randomuser.me/api/portraits/men/53.jpg",
-      rating: 5,
-    },
-    {
-      quote: "We expanded to 3 new countries with their help!",
-      name: "Carlos Mendes",
-      company: "Porto Exports",
-      image: "https://randomuser.me/api/portraits/men/88.jpg",
+      quote:
+        "હાર્ષમો વેન્ચર્સ સાથેનો અનુભવ ખૂબ જ શ્રેષ્ઠ રહ્યો છે. તેમની ટાઈમલી ડિલિવરી અને ઊંચી ગુણવત્તાવાળા પ્રોડક્ટ્સે અમારા બિઝનેસને નવી ઊંચાઈ આપી છે. ખાસ કરીને એજ્યુકેશનલ ટોયઝનો કુલેકશન ખૂબ ઉપયોગી અને બાળકો માટે પ્રશંસનીય છે. વિશ્વસનીય પાર્ટનર શોધી રહ્યા હોય તો હું તેમની ભલામણ ચોક્કસ કરીશ.",
+      name: "Harshad Mehta",
+      company: "Shree Enterprise",
+      image: "https://randomuser.me/api/portraits/men/45.jpg",
       rating: 5,
     },
   ];
