@@ -27,9 +27,9 @@ export default function Testimonials() {
     },
     {
       quote:
-        "હાર્ષમો વેન્ચર્સ સાથેનો અનુભવ ખૂબ જ શ્રેષ્ઠ રહ્યો છે. તેમની ટાઈમલી ડિલિવરી અને ઊંચી ગુણવત્તાવાળા પ્રોડક્ટ્સે અમારા બિઝનેસને નવી ઊંચાઈ આપી છે. ખાસ કરીને એજ્યુકેશનલ ટોયઝનો કુલેકશન ખૂબ ઉપયોગી અને બાળકો માટે પ્રશંસનીય છે. વિશ્વસનીય પાર્ટનર શોધી રહ્યા હોય તો હું તેમની ભલામણ ચોક્કસ કરીશ.",
-      name: "Harshad Mehta",
-      company: "Shree Enterprise",
+        "My experience with Harsmo Ventures has been truly excellent. Their timely delivery and high-quality products have taken our business to new heights. The collection of educational toys, in particular, is very useful and greatly appreciated by children. If you're looking for a reliable partner, I would definitely recommend them.",
+      name: "hardik S",
+      company: "@Shree",
       image: "https://randomuser.me/api/portraits/men/45.jpg",
       rating: 5,
     },

@@ -36,7 +36,7 @@ export default function Services() {
     },
     {
       id: "05",
-      title: "Packaged Food",
+      title: "Packaged Food & Whole Grains",
       desc: "A curated line of traditional dairy items and Indian mouth fresheners (mukhvas), offering authentic taste with premium quality standards.",
       image: foodImage,
     },

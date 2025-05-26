@@ -11,7 +11,11 @@ export default function Footer() {
           reserved.
         </p>
         <div className="footer-social">
-          <a href="#" className="me-3 text-light" aria-label="LinkedIn">
+          <a
+            href="https://www.linkedin.com/company/harsmo-ventures/"
+            className="me-3 text-light"
+            aria-label="LinkedIn"
+          >
             <i className="bi bi-linkedin"></i>
           </a>
           <a href="#" className="me-3 text-light" aria-label="Facebook">
