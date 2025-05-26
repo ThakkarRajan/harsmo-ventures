@@ -8,22 +8,29 @@ export default function Navbar() {
 
   const handleLinkClick = (target) => (e) => {
     e.preventDefault();
-    const section = document.querySelector(target);
-    if (section) {
-      const offset = document.querySelector(".navbar")?.offsetHeight || 80;
-      const top = section.offsetTop - offset;
 
-      window.scrollTo({
-        top,
-        behavior: "auto", // No smooth scroll, just jump
-      });
-    }
+    const performScroll = () => {
+      const section = document.querySelector(target);
+      if (section) {
+        const offset = document.querySelector(".navbar")?.offsetHeight || 80;
+        const top = section.offsetTop - offset;
 
-    setTimeout(() => {
-      if (collapseRef.current?.classList.contains("show")) {
-        collapseRef.current.classList.remove("show");
+        window.scrollTo({
+          top,
+          behavior: "auto",
+        });
       }
-    }, 400);
+    };
+
+    const isMobile = window.innerWidth < 992;
+    const navbarCollapse = collapseRef.current;
+
+    if (isMobile && navbarCollapse?.classList.contains("show")) {
+      navbarCollapse.classList.remove("show");
+      setTimeout(() => performScroll(), 400); // Delay to wait for collapse animation
+    } else {
+      performScroll();
+    }
   };
 
   return (
